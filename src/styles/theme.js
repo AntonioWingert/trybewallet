@@ -1,9 +1,8 @@
 const theme = {
-  darkGreen: '#036B52',
-  lightGreen: '#5FD149',
+  lightGreen: '#2FC18C',
   darkPurple: '#771884',
   lightPurple: '#8958A3',
-  darkBlue: '#0376E2',
+  darkBlue: '#003BE5',
   lightBlue: '#00D5E2',
   gray: '#E1E5EB',
   darkGray: '#444955',

@@ -28,6 +28,7 @@ class Login extends React.Component {
   render() {
     const { email, password } = this.state;
     const VALID_PASSWORD = 6;
+    const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return (
       <Container>
         <form>
@@ -51,8 +52,7 @@ class Login extends React.Component {
           <Link to="/carteira">
             <button
               onClick={ this.handleSubmit }
-              disabled={ !(email.includes('@email.com')
-              && password.length >= VALID_PASSWORD) }
+              disabled={ !(email.match(regexEmail) && password.length >= VALID_PASSWORD) }
               type="submit"
             >
               Entrar

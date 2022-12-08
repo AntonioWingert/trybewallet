@@ -3,6 +3,7 @@ import image from '../assets/foto-fundo.svg';
 
 const GlobalStyle = createGlobalStyle`
   body {
+    font-family: Epilogue, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
