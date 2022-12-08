@@ -4,18 +4,21 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64.8125rem;
-  height: 30.125rem;
   background-color: white;
-  margin: auto;
   box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
   border-radius: 10px;
+  position: absolute;
+  width: 64.8125rem;
+  height: 30.125rem;
+  left: 7.5625rem;
+  top: -6.0625rem;
 
   > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 80%;
+    margin-top: -150px;
 
     div {
       display: flex;

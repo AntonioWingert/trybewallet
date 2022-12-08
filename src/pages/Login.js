@@ -4,13 +4,18 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import Container from '../styles/Login';
 import logo from '../assets/logo-Trybe-Wallet.svg';
-import { savedDates } from '../redux/actions/index';
+import { requestCurrencies, savedDates } from '../redux/actions/index';
 
 class Login extends React.Component {
   state = {
     email: '',
     password: '',
   };
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(requestCurrencies());
+  }
 
   handleChange = (event) => {
     const { target: { value, name } } = event;
