@@ -5,4 +5,8 @@ import rootReducer from './reducers';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
+if (window.Cypress) {
+  window.store = store;
+}
+
 export default store;
