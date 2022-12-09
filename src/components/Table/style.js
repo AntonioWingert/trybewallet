@@ -13,7 +13,7 @@ export const Container = styled.table`
   position: absolute;
   left: 63px;
   top: 156px;
-  z-index: -1;
+  z-index: 2;
 
   > thead {
     display: flex;
@@ -24,6 +24,8 @@ export const Container = styled.table`
     font-size: 12px;
     color: white;
     border-bottom: 2px solid white;
+    top: 235px;
+    position: absolute;
 
     > tr {
       gap: 2rem;
@@ -39,6 +41,41 @@ export const Container = styled.table`
         border: none;
       }
     }
+  }
+
+  > tbody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: ${({ theme }) => theme.lightGreen};
+
+    > tr {
+      margin: 7.5px;
+      border-bottom: 1px solid ${({ theme }) => theme.lightGreen};
+
+      td {
+        width: 110px;
+        height: 26.6px;
+
+        button {
+          cursor: pointer;
+          background: none;
+          border: none;
+        }
+      }
+    }
+  }
+
+  .edit {
+    color: ${({ theme }) => theme.lightGreen}
+  }
+
+  .delete {
+    color: #DF3C6D;
   }
 `;
 

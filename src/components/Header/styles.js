@@ -12,6 +12,7 @@ export const Container = styled.div`
   height: 30.125rem;
   left: 7.5625rem;
   top: -6.0625rem;
+  z-index: 3;
 
   > div {
     display: flex;

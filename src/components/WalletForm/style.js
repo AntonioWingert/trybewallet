@@ -8,6 +8,7 @@ export const Container = styled.div`
   top: 156px;
   background: rgba(225, 229, 235, 0.49);
   border-radius: 0px;
+  z-index: 4;
 `;
 
 export const DescriptionContainer = styled.div`

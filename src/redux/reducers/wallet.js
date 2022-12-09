@@ -1,4 +1,4 @@
-import { REQUEST_FAILED,
+import { CLOSE_EDIT, HANDLE_EXPENSE, EDIT_EXPENSE, REQUEST_FAILED,
   REQUEST_STARTED,
   REQUEST_SUCCESSFUL,
   SAVE_EXPENSE,
@@ -28,6 +28,19 @@ const wallet = (state = INITIAL_STATE, action) => {
   case SAVE_EXPENSE: return {
     ...state,
     expenses: [...state.expenses, action.data],
+  };
+  case HANDLE_EXPENSE: return {
+    ...state,
+    expenses: action.data,
+  };
+  case EDIT_EXPENSE: return {
+    ...state,
+    editor: true,
+    idToEdit: action.id,
+  };
+  case CLOSE_EDIT: return {
+    ...state,
+    editor: false,
   };
   default: return state;
   }
