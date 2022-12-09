@@ -3,8 +3,7 @@ const currenciesApi = async () => {
   try {
     const response = await fetch(URL);
     const data = await response.json();
-    const objData = Object.keys(data);
-    return objData.filter((item) => item !== 'USDT');
+    return data;
   } catch (error) {
     return error;
   }

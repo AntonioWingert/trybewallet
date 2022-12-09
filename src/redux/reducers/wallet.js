@@ -1,4 +1,8 @@
-import { REQUEST_FAILED, REQUEST_STARTED, REQUEST_SUCCESSFUL } from '../actions';
+import { REQUEST_FAILED,
+  REQUEST_STARTED,
+  REQUEST_SUCCESSFUL,
+  SAVE_EXPENSE,
+} from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -20,6 +24,10 @@ const wallet = (state = INITIAL_STATE, action) => {
   case REQUEST_FAILED: return {
     ...state,
     error: action.error,
+  };
+  case SAVE_EXPENSE: return {
+    ...state,
+    expenses: [...state.expenses, action.data],
   };
   default: return state;
   }

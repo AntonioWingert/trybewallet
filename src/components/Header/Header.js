@@ -7,18 +7,23 @@ import logo from '../../assets/logo-Trybe-Wallet.svg';
 
 class Header extends Component {
   render() {
-    const { email } = this.props;
+    const { email, expenses } = this.props;
+    const currentValue = expenses.reduce((acc, curr) => (
+      acc + (curr.value * curr.exchangeRates[curr.currency].ask)), 0);
     return (
       <Container>
         <div>
           <img src={ logo } alt="logo-trybe-wallet" />
           <ContainerDespesas>
             <FaCoins size={ 20 } />
-            <p data-testid="total-field">
+            <p>
               Total de despesas:
               {' '}
-              <span data-testid="header-currency-field"> 0 BRL</span>
+              <span data-testid="total-field">{currentValue.toFixed(2)}</span>
             </p>
+            <span data-testid="header-currency-field">
+              BRL
+            </span>
 
           </ContainerDespesas>
           <ContainerUser>
@@ -33,10 +38,16 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
+  expenses: state.wallet.expenses,
 });
 
 Header.propTypes = {
   email: propTypes.string.isRequired,
+  expenses: propTypes.arrayOf(propTypes.shape({})),
+};
+
+Header.defaultProps = {
+  expenses: [],
 };
 
 export default connect(mapStateToProps)(Header);

@@ -79,7 +79,7 @@ export const PaymentContainer = styled.div`
     color: ${({ theme }) => theme.darkBlue};
   }
 
-  .currencyPayment {
+  .currency {
     margin-left: 15px;
     border: 1px solid ${({ theme }) => theme.darkBlue};
     width: 91px;
@@ -88,5 +88,27 @@ export const PaymentContainer = styled.div`
     border-radius: 5px;
     outline: none;
     color: ${({ theme }) => theme.darkBlue};
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+
+  > button {
+    width: 330px;
+    height: 40px;
+    background: ${({ theme }) => theme.lightGreen};
+    border: none;
+    color: white;
+    box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
   }
 `;
