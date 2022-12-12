@@ -19,7 +19,7 @@ class Table extends Component {
   };
 
   render() {
-    const { expenses } = this.props;
+    const { expenses, error } = this.props;
     const showExpenses = expenses.map(({
       id,
       description,
@@ -77,6 +77,11 @@ class Table extends Component {
         </thead>
         <tbody>
           {showExpenses}
+          {error ?? (
+            <p>
+              Ocorreu um erro...
+              {error}
+            </p>)}
         </tbody>
       </Container>
     );
@@ -85,11 +90,13 @@ class Table extends Component {
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
+  error: state.wallet.error,
 });
 
 Table.propTypes = {
   expenses: propTypes.arrayOf({}).isRequired,
   dispatch: propTypes.func.isRequired,
+  error: propTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps)(Table);
